@@ -19,13 +19,13 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((data: any[]) => {
       this.tasks = data;
-  
+      this.loadTasks();
     })
   }
   onDelete(taskId: number) {
     this.taskService.deleteTask(taskId).subscribe(data => {
       alert("Task is deleted successfully.");
-    })
+    }) 
   }
   loadTasks() {
     this.taskService.getTasks().subscribe(data => {
@@ -34,6 +34,6 @@ export class TaskListComponent implements OnInit {
 
   }
   onEdit(taskId: number) {
-    this.router.navigate(['/edit', taskId])
+    this.router.navigate(['/admin/edit', taskId])
   }
 }

@@ -68,12 +68,12 @@ export class UserAddComponent implements OnInit {
       user.id = this.userId;
       this.userService.updateUser(user).subscribe(data => {
         this.toastr.success("User is updated successfully");
-        this.router.navigate(["/users"]);
+        this.router.navigate(["/admin/users"]);
       });
     } else {
       this.userService.createUser(user).subscribe(data => {
         this.toastr.success("User is created successfully");
-        this.router.navigate(["/users"]);
+        this.router.navigate(["/admin/users"]);
       });
     }
 

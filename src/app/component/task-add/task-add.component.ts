@@ -49,12 +49,12 @@ ngOnInit(): void{
     let task = this.taskForm.value;
     console.log(task)
     this.taskservice.createTask(task).subscribe(data => {
-      this.router.navigate(['/'])
+      this.router.navigate(['/admin/tasks'])
     });
   }
   cancel(){
     this.taskForm.reset();
-    this.router.navigate(['/'])
+    this.router.navigate(['/admin/tasks'])
   }
   
 }
